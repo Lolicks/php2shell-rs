@@ -1,0 +1,6 @@
+HTTP/1.1 200 OK
+Server: nginx
+Content-Type: text/plain
+X-Observed-Url: http://127.0.0.1:8110/index.php
+
+static content without a PHP banner

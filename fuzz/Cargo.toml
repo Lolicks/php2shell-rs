@@ -1,0 +1,20 @@
+[package]
+name = "php2shell-fuzz"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+libfuzzer-sys = "0.4.13"
+arbitrary = "1.5.0"
+php2shell-binary-parser = { path = "../crates/binary-parser" }
+
+[[bin]]
+name = "fuzz_elf64"
+path = "fuzz_targets/fuzz_elf64.rs"
+
+[[bin]]
+name = "fuzz_reader"
+path = "fuzz_targets/fuzz_reader.rs"

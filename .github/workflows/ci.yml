@@ -12,77 +12,49 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_NET_RETRY: 5
+
 jobs:
-  test:
-    name: Python ${{ matrix.python-version }}
+  quality:
+    name: fmt / check / clippy / tests / compatibility / audit
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+    timeout-minutes: 45
     steps:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install Rust toolchain (rust-toolchain.toml)
+        run: rustup show active-toolchain
+
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@v2
         with:
-          python-version: ${{ matrix.python-version }}
-          cache: pip
-          cache-dependency-path: requirements-dev.txt
+          shared-key: php2shell-rs-ci
 
-      - name: Install test dependencies
-        run: python -m pip install --upgrade pip -r requirements-dev.txt
+      - name: 1. rustfmt
+        run: cargo fmt --all -- --check
 
-      - name: Lint
-        run: ruff check tools tests
+      - name: 2. cargo check
+        run: cargo check --workspace --all-targets --locked
 
-      - name: Compile Python
-        run: python -m compileall -q tools tests
+      - name: 3. clippy
+        run: cargo clippy --workspace --all-targets --locked -- -D warnings
 
-      - name: Check shell syntax
-        run: bash -n lab/fpm/build_php.sh lab/fpm/build_nginx.sh lab/fpm/build_all.sh
+      - name: 4. unit tests
+        run: cargo test --workspace --lib --bins --locked
 
-      - name: Unit tests
-        run: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
+      - name: 5. integration tests
+        run: cargo test --workspace --test integration --locked
 
-      - name: Validate build profiles against schema
+      - name: 6. JSON compatibility tests
+        run: cargo test --workspace --test compatibility --locked
+
+      - name: 7. original profile validation
+        run: cargo run --quiet --locked -- profile validate
+
+      - name: 8. dependency audit
         run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          import jsonschema
-
-          schema = json.loads(Path("profiles/schema.json").read_text())
-          for path in sorted(Path("profiles").glob("*.json")):
-              if path.name in ("schema.json", "fpm-schema.json"):
-                  continue
-              jsonschema.validate(json.loads(path.read_text()), schema)
-              print(f"{path}: valid")
-          PY
-
-      - name: Validate PHP-FPM profiles against the FPM schema
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          import jsonschema
-
-          schema = json.loads(Path("profiles/fpm-schema.json").read_text())
-          for path in sorted(Path("profiles").glob("*-fpm.json")):
-              jsonschema.validate(json.loads(path.read_text()), schema)
-              print(f"{path}: valid")
-          PY
-
-  secrets:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Gitleaks
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          cargo install cargo-audit --locked
+          cargo audit

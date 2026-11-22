@@ -1,0 +1,644 @@
+{
+    "schema_version":  1,
+    "description":  "SHA-256 checksums of the upstream profiles, recorded before the Rust migration. Never edit these hashes unless a profile is changed with a documented reason.",
+    "generated_from":  "devploit/php2shell @ main",
+    "count":  106,
+    "files":  [
+                  {
+                      "path":  "profiles/7.4.33-bookworm-aarch64.json",
+                      "sha256":  "86104e0e71933aa67ed9181093e5361e59503681542ccd9c8aed34962a4e7ead",
+                      "bytes":  525,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/7.4.33-buster-amd64.json",
+                      "sha256":  "06e229609eaa87a641601d42ede4a33485c7f8ded8839ad90442159cf43bea36",
+                      "bytes":  850,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/7.4.33-fpm.json",
+                      "sha256":  "7344dea060ff21a63bf77f36f5fc29a245292b983460718324969b8ab1d66a68",
+                      "bytes":  3881,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.0.30-bookworm-aarch64.json",
+                      "sha256":  "941f68e8325e2fd26910d04b246384e94247da69ed744c9aed77380a72215ac5",
+                      "bytes":  525,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.0.30-fpm.json",
+                      "sha256":  "9b286c53190c696aeede53fb1ac7f2f6cd3b253eb8478a59757f83b278d0575c",
+                      "bytes":  3866,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.1.33-fpm.json",
+                      "sha256":  "8c1214f01c9c78efd8483c8196cdd85add621a134dc027708416554f2438898e",
+                      "bytes":  3170,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.1.34-bookworm-aarch64.json",
+                      "sha256":  "f3c441ab6521d01645035026620975889f962b8a9abbc3f6f07283a87f2348fa",
+                      "bytes":  525,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.1.34-bullseye-amd64.json",
+                      "sha256":  "ceecdf2c0fd9af180b4d778408b1ada952156455bf89a7289f638b93c0dafd62",
+                      "bytes":  852,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.2.28-bookworm-amd64.json",
+                      "sha256":  "7973f9cec7d81ef16c2f260c9cbccae75dc29a8d32963b2c0bef0aacafdf5c16",
+                      "bytes":  856,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.2.34-bookworm-aarch64.json",
+                      "sha256":  "a25ee0d46227ad1502c6de98362c12ff1e7dd87192d19618694abfcb3ada3a7c",
+                      "bytes":  954,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.2.34-bookworm-amd64.json",
+                      "sha256":  "d6957427bbce89b1fe22bd4baa854007e5bc16299cfb5cc70c997cbb21a7e64a",
+                      "bytes":  856,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.2.34-fpm.json",
+                      "sha256":  "8d027c7025b766bbc756675f9f16b7218d99213c8eaf2e99e400a1ff845070e8",
+                      "bytes":  3161,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.3.0-bookworm.json",
+                      "sha256":  "4d9abf8b2cc7f7c2efe3807fd3b45b9438885b4b1c96c13bda4d910c86716297",
+                      "bytes":  827,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.3.20-bookworm-amd64.json",
+                      "sha256":  "f5067c2e091b2dd9fac39c54974f35ceba218344244c116eeb3aca9cc1dce2b2",
+                      "bytes":  879,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.3.33-wordpress.json",
+                      "sha256":  "7082d6ebdda28ffbe712af4c1d10ea5924f9d05838f2c78a7f75242b1ea6fb32",
+                      "bytes":  1052,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.3.35-bookworm-aarch64.json",
+                      "sha256":  "eb23e09a110dda548c3663dcf0f16100bfdb783c89e7b1a4f0b9037e807f5519",
+                      "bytes":  864,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.3.35-bookworm-amd64.json",
+                      "sha256":  "b860c1669b0114c727356efce7bd7bd558d13305ffc941a41137c6a1fcfefdec",
+                      "bytes":  877,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.3.35-fpm.json",
+                      "sha256":  "42df0a79b64ccf761cf93b87e83d106e4e944d45475847cc0d92a180d929a9d0",
+                      "bytes":  3161,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.4.0-fpm.json",
+                      "sha256":  "0a8ad9fecada8419c77dc778ca88720cceaad17f14dfe9db711b14b8fbfd78a2",
+                      "bytes":  3159,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.4.10-bookworm-amd64.json",
+                      "sha256":  "e259c7a66c90b9248ebda19b8b89c07e66c5d4d0ff69eed19314e201188e3c47",
+                      "bytes":  1201,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.11-bookworm-amd64.json",
+                      "sha256":  "537653e8febbd66ba653639918bc79d31d34eae1fade38c656c825176bf06167",
+                      "bytes":  1201,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.12-bookworm-amd64.json",
+                      "sha256":  "4c57eddbc721591abe1a21f2ffe5c1940d7ac43c35e21c7c49b48b28d901cca4",
+                      "bytes":  872,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.13-bookworm-amd64.json",
+                      "sha256":  "41466240bf04473f4a4470bd2acde6520070e99dce7fc392e3f1d0365c26f155",
+                      "bytes":  871,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.14-bookworm-amd64.json",
+                      "sha256":  "71391b01e1a6ff9b6740f36fc34bef11cd6794f872119918175ede0d0fab47fb",
+                      "bytes":  872,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.15-bookworm-amd64.json",
+                      "sha256":  "1d15b3212375d37e868d79741c1efe7f697a453e24eda893de53f2ff34be9cae",
+                      "bytes":  872,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.16-bookworm-amd64.json",
+                      "sha256":  "b17f957f53095eab5a3d4329f70251ab55e7437a6afed0ae63776522442d3995",
+                      "bytes":  878,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.17-bookworm-amd64.json",
+                      "sha256":  "b064a9bba6f8e0622d3d953f42138bc5ffd1b441737cb97c5df4b0f3fd101853",
+                      "bytes":  878,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.18-bookworm-amd64.json",
+                      "sha256":  "02d7cab1e84d2c3fa3b6770d1765b07e264fa3798cce72d3ea908f2caf0523e0",
+                      "bytes":  878,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.19-bookworm-amd64.json",
+                      "sha256":  "0e3cbea43999eb22687831c848baf51a2597c1899ca297959aa9aaf9b18dd9ba",
+                      "bytes":  1201,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.20-bookworm-amd64.json",
+                      "sha256":  "c2e5464704d5c86f7cf679972dc92cf988c80bb7dda1741a75067c8971278883",
+                      "bytes":  1201,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.25-bookworm-aarch64.json",
+                      "sha256":  "177a9102cb9fbbbae797ff5cee4d2a4570c372bd9d1c74be7bf92615d4527dab",
+                      "bytes":  1129,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.25-bookworm-amd64.json",
+                      "sha256":  "f3bad1828440e62d87e24457a946cca68905f963024c7bd68f01159af2a31c4b",
+                      "bytes":  1201,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.25-fpm.json",
+                      "sha256":  "5780250cbc1dee1c004e09d3aad4ea55be0ec2da3d911a5e45df59a66699bb7e",
+                      "bytes":  3893,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.4.26-bookworm-amd64.json",
+                      "sha256":  "ef502e87397549cbe3c26abf8c42e305b4a27ee49d17d1df598f6b40ff4e3d94",
+                      "bytes":  1270,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.26-fpm.json",
+                      "sha256":  "2b17890f903882f5ead35b0e817b7fa0357236bbd4c3da6b4457c35baea5decf",
+                      "bytes":  3889,
+                      "category":  "fpm"
+                  },
+                  {
+                      "path":  "profiles/8.4.2-bookworm-amd64.json",
+                      "sha256":  "d8866c0becfd6d4e664940c702e76a72fa275bc210007af8ad7bfa2b2bba201e",
+                      "bytes":  855,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.5-bookworm-amd64.json",
+                      "sha256":  "08a2409c9beba4350d856c288ade177914ccd9319cb6c16cf953c2cc7c593cdd",
+                      "bytes":  877,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.6-bookworm-amd64.json",
+                      "sha256":  "871d5549acac517f33e7e6079514dec1794ce963477900ccd446dfab68f01dca",
+                      "bytes":  876,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.7-bookworm-amd64.json",
+                      "sha256":  "44b1abb15e907a96746a0ee991d4ce68b5387a520d34cffe84218a1742a1495d",
+                      "bytes":  870,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.4.8-bookworm-amd64.json",
+                      "sha256":  "adb8ee5a0f732cbd101fecb66c6f880935886076bd24a928546a9f3643d11b58",
+                      "bytes":  875,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.0-bookworm.json",
+                      "sha256":  "84a6baee98a15bc0cae151a272fe5b75c0359d5c2e4b6e141f577a7ed816f7b4",
+                      "bytes":  843,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.0-bookworm-amd64.json",
+                      "sha256":  "f68c8ed432b0fbaac35442415a25aaf63a29c5ebfa8150bda4498c14261e7a69",
+                      "bytes":  1183,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.10-bookworm-aarch64.json",
+                      "sha256":  "e3789745ed135e2ae2b18cb5cb2feba72f6c507cc7b8a4b522612e428168b9df",
+                      "bytes":  1130,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.10-bookworm-amd64.json",
+                      "sha256":  "47574dc41a7430eaad9ae276e1aef3d22427bde71a0fb57c9c49c685542ff18b",
+                      "bytes":  1196,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.11-bookworm-aarch64.json",
+                      "sha256":  "c77c3fa3c9771079c993cc7d81690ebd9326814fa10538ed62f56a5e57ab8a54",
+                      "bytes":  1250,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.11-bookworm-amd64.json",
+                      "sha256":  "6fc798e8bd907acef4ef46bcc59f2d21f26d54bc69da95cda58fb78ae69bd4be",
+                      "bytes":  1126,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.1-bookworm-amd64.json",
+                      "sha256":  "453392b8eb1d5c71a0c0058b4def93b0b9ac811c52c88c19b96ee94733e75639",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.2-bookworm-amd64.json",
+                      "sha256":  "49fc4b705fbe10a703b1559bd2bccab1f097ba762596423a9a0c3bf7d1bb595d",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.3-bookworm-amd64.json",
+                      "sha256":  "dae4347ea3270c25e6e2a98a457be07b02587d6f4c775381faca7097e57d60c0",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.4-bookworm-amd64.json",
+                      "sha256":  "42ad4b1129006c214110af7e431a79637af9515bfd3537d0bf8211b3fed9baca",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.5-bookworm-amd64.json",
+                      "sha256":  "605f37db6593b946a070896ea522959f62d7e126f7eba57980a6898d5061a841",
+                      "bytes":  1183,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.6-bookworm-amd64.json",
+                      "sha256":  "f1213a2f3485b1e8aec55c30891beb513efb6d110369c13ae711cd60db5c17aa",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.7-bookworm-amd64.json",
+                      "sha256":  "f893a16c972a00959ebced19763491edd46f1dab0eba24edeb1fcd0b9600b585",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.8-bookworm-amd64.json",
+                      "sha256":  "09a39fe07d689fbb87b59f4d212452b8a795d7c37d2233ada4f0715a3d846ac1",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/8.5.9-bookworm-amd64.json",
+                      "sha256":  "f9d292504f698bfcddc64b4bf449758b86d54eb05670cb04b2a10ab824f69361",
+                      "bytes":  1178,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/fpm-schema.json",
+                      "sha256":  "8f2f0c28421260fb6644ef4ea6ec0e911aa3bddbd97386fc4067d592ae8171de",
+                      "bytes":  10737,
+                      "category":  "schema"
+                  },
+                  {
+                      "path":  "profiles/php-8.4.26-deb13-apxs2-amd64.json",
+                      "sha256":  "776324632b94823da3467b21fb9fcc4d9104c379388bb8641ce2364974fbadb1",
+                      "bytes":  2677,
+                      "category":  "apache"
+                  },
+                  {
+                      "path":  "profiles/schema.json",
+                      "sha256":  "997949b947cc4539af24f482359504176f93e76d740e4a7a3186dd8cf857025c",
+                      "bytes":  20063,
+                      "category":  "schema"
+                  },
+                  {
+                      "path":  "profiles/offsets/7.4.33-aarch64.json",
+                      "sha256":  "f4592cfd84e2355c90d694109300fe80808ec69dc865c0842b2a66c51da9d340",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/7.4.33-amd64.json",
+                      "sha256":  "62e78869d1e188852b8ae7fa4c60d0e26ebf78d53bb95e2c949e9d67a9589be7",
+                      "bytes":  360,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.0.30-aarch64.json",
+                      "sha256":  "e7b5c0c8f0b34f0bb525a572e18bb824ad48ddf41440074c6fd05059ab6bea66",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.0.30-amd64.json",
+                      "sha256":  "3e0bff376a90940f5aa1fa3eddc9d0297d6daaa7554a1159432f1b06414166a1",
+                      "bytes":  360,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.1.34-aarch64.json",
+                      "sha256":  "5a4b74c2f846bd5872d1f8c5ecec31556ba2dc3452e03ed8c303d9f73ad50f7f",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.1.34-amd64.json",
+                      "sha256":  "510fc6c60cda427d4a87413054766148260be8a149e46516d9968b029b297bf7",
+                      "bytes":  360,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.2.0-aarch64.json",
+                      "sha256":  "d90c19c409515759257f47788168d43bb5501d16f0e4a1409764f4e891de4cb0",
+                      "bytes":  363,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.2.28-amd64.json",
+                      "sha256":  "bd570090d16853bbd578e51e71722958aa6131b8354374a66adb9ed07cbd2a3b",
+                      "bytes":  363,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.2.34-aarch64.json",
+                      "sha256":  "0090c0bced520d15466faeb02b03c76b3a7344981eef2bf419e2ab718e278354",
+                      "bytes":  365,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.2.34-amd64.json",
+                      "sha256":  "cbfd03b6b3527eed68245e8c8a363211573388030769d9417c503e1b1f1b2ce9",
+                      "bytes":  363,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.3.0-aarch64.json",
+                      "sha256":  "2eb0c32b68b9c2b5e677304793d8b631322c3b7beb6c0a162c7b39089b90f4fc",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.3.20-amd64.json",
+                      "sha256":  "779bc936e38b4a6c886699e6b0e5bae18696b21330a7bca0a4a5c3ce2fe61ac4",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.3.35-aarch64.json",
+                      "sha256":  "6ae42e5e82aa62a4a1d7071c4ee11538570a954b085feb0dac250a88615dcbdc",
+                      "bytes":  366,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.3.35-amd64.json",
+                      "sha256":  "468d9bc79876829046184f37d48a34f81dea4ab90242069fb1c1704f2304d25e",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.10-amd64.json",
+                      "sha256":  "483fa8fc23e4444904a977c83c0df034e332d1ed9d3819309ad3a73206d4317c",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.11-amd64.json",
+                      "sha256":  "2771eb4fcac93437eaf738c3a5d44fae8c4873bf7865b604cffca34b185ef168",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.12-amd64.json",
+                      "sha256":  "73ed5a4a79eec33168a3532152e9fb913bddf7a69a572508b183ed83a1b95ecc",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.13-amd64.json",
+                      "sha256":  "1360cab88c9d4877c97eb2c3da815acf07dbecfdbe4fa361a9da3601ba22471b",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.14-amd64.json",
+                      "sha256":  "8032f10002a18da88d03276cd318772fcc288f06d5da14e3c47e7be8a21ebad2",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.15-amd64.json",
+                      "sha256":  "38e66de87b2240f86ba2964bf969717dddda00358ad7cfb510b090054b55979a",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.16-amd64.json",
+                      "sha256":  "6760c05eb25ec57b6af80d6f1cb9b4c2055e4f0db02498e73d82c03c9daa7507",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.17-amd64.json",
+                      "sha256":  "9ba5dc31c1502dec7de046bcbadc9fe0fc96f042b34c252e9652846947526b41",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.18-amd64.json",
+                      "sha256":  "a45e838a169e5f8a2c6167faa631e4db16d44134dad1abc4d1d0f7d1d0a01b4d",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.19-amd64.json",
+                      "sha256":  "447d45b9ee9cdf50ffbb48f5b29a57e0552460c0c81a0606be125e78d7edac06",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.20-amd64.json",
+                      "sha256":  "62f4741202a5068403103a310ee7a8a2e517db8fa394526aa2889e85ba43355b",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.25-aarch64.json",
+                      "sha256":  "6dccb97307c4d9006af57a770cf8869335ed65e8e750ff0749007d6770699221",
+                      "bytes":  366,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.25-amd64.json",
+                      "sha256":  "94ba7ba94f3c1de91d59b7d143a0c4d418a29c72c32d2e082e51a1f89194ffea",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.26-amd64.json",
+                      "sha256":  "2a2ef9b5c57e5699c1b0d2975adff75b814c90a077ab1ca7ba5ac1224ff0bc3c",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.2-amd64.json",
+                      "sha256":  "977f5331f50ebcc9aac103cf2c74ac03226669db3a0d0b93bc5c0c4d89de907e",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.5-amd64.json",
+                      "sha256":  "ed3aa9fa425299c44a5203968c65a180e1b09e998a6e6a4ac0eb8ceedcd72ab1",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.6-amd64.json",
+                      "sha256":  "9bc24f43bad817a9df9a84ea0b8c2096b84b80a60f4728f06339518be4d341e2",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.7-amd64.json",
+                      "sha256":  "00e1a853e989ed0c04d545968a04c4ab2d7a2a5d85fa8bdbff5da8bcb622e7d8",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.4.8-amd64.json",
+                      "sha256":  "629ba923886477209507613c36c6e43e689066bb45da7fc66032b580c3e4ec77",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.0-aarch64.json",
+                      "sha256":  "03a3471d1863df24e8e2073945b2d5f2bc8da08e02c7560a188276b4789f600e",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.0-amd64.json",
+                      "sha256":  "bf65228471519930c19d307da9b26b62d2c7367ac2e086f50d625f6b4351c435",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.10-aarch64.json",
+                      "sha256":  "2c0fa7c0e2d0e52970a3f519c2d3334d0f6e00cf27e1d2553ef29932ab396eed",
+                      "bytes":  366,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.10-amd64.json",
+                      "sha256":  "a00356b6a075de6f6aa9347d2f8f41cd96d6bdb09e2149e805f7daceec7c58ec",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.11-aarch64.json",
+                      "sha256":  "58acba24c36a4357a87342b64d70d512c74616a6ddeec5c8d9c54204ea4e1f50",
+                      "bytes":  366,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.11-amd64.json",
+                      "sha256":  "8f046f531e035b69d3e3c859c1bf1f846dbe5b99b371d34e6972e94b727a74b7",
+                      "bytes":  364,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.1-amd64.json",
+                      "sha256":  "d92a74c91cd6e590da82c9c7645501ea13183e334f207d1d74c5648ff7501abe",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.2-amd64.json",
+                      "sha256":  "3e3a7eeb430b11c209f4360104756751e9e7cd679997c8ecbf9030cdd80f7820",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.3-amd64.json",
+                      "sha256":  "ad799e439b734c3ea8746bcced20c1284a20bc4b60e78d08dd46bba3d993cb40",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.4-amd64.json",
+                      "sha256":  "d4054fda14bbcbc09e251c965b0ac0722ec532f7ed5bd4c521d9148434fb0f79",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.5-amd64.json",
+                      "sha256":  "725fcc531054796f03b33da23f818e2e704675101e53647830e0b376c74ddf4d",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.6-amd64.json",
+                      "sha256":  "c04670df4457b3e3523da1e5a1976338c67a527f255aef59210675882bf5b1ee",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.7-amd64.json",
+                      "sha256":  "1563efb71ce51ef26475ca01f48516e3b72ccecf7936cf4b5979bbf933d7600e",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.8-amd64.json",
+                      "sha256":  "b709fd95f7ce709bf1637fb1a5d5d286132c55cb8443ef7682a2102e2b2802ec",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  },
+                  {
+                      "path":  "profiles/offsets/8.5.9-amd64.json",
+                      "sha256":  "09210e66472e3e4a1bc492784850ea0ab9755d8c7cc4961f56660ad7dab6f291",
+                      "bytes":  362,
+                      "category":  "offsets"
+                  }
+              ]
+}

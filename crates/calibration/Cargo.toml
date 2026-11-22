@@ -1,0 +1,17 @@
+[package]
+name = "php2shell-calibration"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+php2shell-core.workspace = true
+php2shell-config.workspace = true
+php2shell-binary-parser.workspace = true
+time.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true

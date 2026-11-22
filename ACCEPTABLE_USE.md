@@ -1,44 +1,26 @@
-# Acceptable use
+# Acceptable Use — PHP2Shell-RS
 
-PHP2Shell is a research toolkit for **authorized** security testing. This page
-is part of the project's terms of use, together with [LICENSE](LICENSE) and
-[SECURITY.md](SECURITY.md).
+This project is a **diagnostic and laboratory tool**. It does not contain
+exploitation code and must not be used to attack systems.
 
-## You may use it only when
+## Permitted
 
-- you own the target system, or
-- you have explicit, written permission from the owner to test it, and
-- your testing complies with the law and with the rules of any program you
-  participate in.
+- fingerprinting systems you own or have explicit written permission to test;
+- importing, validating and inspecting build profiles;
+- running the local loopback mock laboratory;
+- managing your own Docker Compose laboratory in `mode = "lab"`;
+- defensive research, detection engineering and patch verification.
 
-A public website, an IP address you found online, or a domain that "looks like a
-lab" is **not** authorization.
+## Not permitted
 
-## You must not
+- using the tool against third-party infrastructure;
+- attempting to obtain shells, execute commands or bypass access controls;
+- sending OOM/DoS workloads or saturating workers;
+- building target lists or mass-scanning networks;
+- redistributing the archived Python exploit research as an attack toolkit.
 
-- test third-party or public infrastructure;
-- build or distribute target lists, scanners or mass-exploitation tooling;
-- use the remote worker-saturation mode against systems you do not own: it opens
-  many connections and is disruptive;
-- cause denial of service, data loss or persistence on systems without written
-  authorization;
-- publish data obtained from systems you do not own (hostnames, cookies,
-  credentials, file contents).
+`legacy/python/` contains the original research sources for audit purposes
+only. They are not built, tested, installed or invoked by PHP2Shell-RS.
 
-## Disruptive behavior
-
-The chain sends large request bodies, triggers out-of-memory conditions and
-kills Apache children. Run it against disposable laboratories. The reference
-labs bind to `127.0.0.1` and mount an `/out` directory; keep it that way.
-
-## Disclosure
-
-If you find a new affected build or a new PHP issue, prefer coordinated
-disclosure with the PHP security team and the distribution vendor. Do not
-publish an unpatched exploit or third-party data.
-
-## No warranty
-
-The software is provided "as is", without warranty of any kind. The authors
-accept no liability for misuse or damage. The license grants copyright
-permissions only; it does not grant authorization to test any system.
+The license grants copyright permissions only; it never grants authorization
+to test any system.

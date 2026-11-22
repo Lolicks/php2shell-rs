@@ -1,0 +1,15 @@
+[package]
+name = "php2shell-reporting"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+php2shell-core.workspace = true
+php2shell-config.workspace = true
+php2shell-diagnostics.workspace = true
+php2shell-calibration.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+time.workspace = true

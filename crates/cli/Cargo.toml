@@ -1,0 +1,28 @@
+[package]
+name = "php2shell-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+php2shell-core.workspace = true
+php2shell-config.workspace = true
+php2shell-profiles.workspace = true
+php2shell-http-client.workspace = true
+php2shell-fingerprint.workspace = true
+php2shell-binary-parser.workspace = true
+php2shell-diagnostics.workspace = true
+php2shell-calibration.workspace = true
+php2shell-inventory.workspace = true
+php2shell-lab-manager.workspace = true
+php2shell-reporting.workspace = true
+php2shell-tui.workspace = true
+clap.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+serde_json.workspace = true
+serde.workspace = true
+indicatif.workspace = true
+bytes.workspace = true

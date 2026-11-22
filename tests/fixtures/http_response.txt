@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Mon, 02 Nov 2026 10:00:00 GMT
+Server: Apache/2.4.69 (Debian)
+X-Powered-By: PHP/8.4.26
+Content-Type: text/html; charset=UTF-8
+Content-Length: 3
+X-Observed-Url: http://127.0.0.1:8105/index.php
+
+OK

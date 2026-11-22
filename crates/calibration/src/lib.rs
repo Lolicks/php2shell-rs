@@ -1,0 +1,14 @@
+//! Safe calibration support: reproducible metadata and artifact hashes.
+//!
+//! The exploit-driven calibration stages of the original Python toolkit are
+//! intentionally absent. This crate records observations and checks their
+//! metadata; it never applies a payload and never marks a result as verified
+//! without an operator-supplied artifact hash.
+
+mod metadata;
+mod record;
+
+pub use metadata::{
+    ContainerMetadata, collect_container_metadata, parse_memory_limit, symbol_offsets,
+};
+pub use record::{CalibrationRecord, CalibrationResult};

@@ -1,0 +1,139 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: build ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: windows-x64
+            target: x86_64-pc-windows-msvc
+            os: windows-latest
+            binary: php2shell-rs.exe
+            artifact: php2shell-rs-windows-x64.exe
+          - name: windows-arm64
+            target: aarch64-pc-windows-msvc
+            os: windows-11-arm
+            binary: php2shell-rs.exe
+            artifact: php2shell-rs-windows-arm64.exe
+          - name: linux-x64
+            target: x86_64-unknown-linux-gnu
+            os: ubuntu-latest
+            binary: php2shell-rs
+            artifact: php2shell-rs-linux-x64
+          - name: linux-arm64
+            target: aarch64-unknown-linux-gnu
+            os: ubuntu-24.04-arm
+            binary: php2shell-rs
+            artifact: php2shell-rs-linux-arm64
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Rust toolchain and target
+        shell: bash
+        run: |
+          rustup show active-toolchain
+          rustup target add ${{ matrix.target }}
+
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: php2shell-rs-${{ matrix.target }}
+
+      - name: Release build (GitHub Actions only)
+        shell: bash
+        run: cargo build --release --locked --target ${{ matrix.target }} --bin php2shell-rs
+
+      - name: Verify binary exists
+        shell: bash
+        run: test -f "target/${{ matrix.target }}/release/${{ matrix.binary }}"
+
+      - name: Smoke test --version
+        shell: bash
+        run: '"target/${{ matrix.target }}/release/${{ matrix.binary }}" --version'
+
+      - name: Smoke test --help
+        shell: bash
+        run: '"target/${{ matrix.target }}/release/${{ matrix.binary }}" --help'
+
+      - name: Package with checksum
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          cp "target/${{ matrix.target }}/release/${{ matrix.binary }}" "dist/${{ matrix.artifact }}"
+          cp README.md LICENSE CHANGELOG.md dist/
+          (cd dist && sha256sum "${{ matrix.artifact }}" > "SHA256SUMS-${{ matrix.name }}")
+          ls -l dist
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ matrix.name }}
+          path: dist/*
+          if-no-files-found: error
+
+  release:
+    name: publish GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/v')
+    permissions:
+      contents: write
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          pattern: release-*
+          merge-multiple: true
+
+      - name: Build combined SHA256SUMS
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd dist
+          cat SHA256SUMS-* > SHA256SUMS
+          rm SHA256SUMS-*
+          cat SHA256SUMS
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/php2shell-rs-windows-x64.exe
+            dist/php2shell-rs-windows-arm64.exe
+            dist/php2shell-rs-linux-x64
+            dist/php2shell-rs-linux-arm64
+            dist/SHA256SUMS
+            dist/README.md
+            dist/CHANGELOG.md
+          generate_release_notes: true
+          fail_on_unmatched_files: true
