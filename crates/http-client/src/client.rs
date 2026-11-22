@@ -63,6 +63,19 @@ impl SafeClient {
     }
 
     pub async fn fetch(&self, target: &str) -> Result<HttpResponse> {
+        self.fetch_with(target, reqwest::Method::GET, Vec::new(), Vec::new())
+            .await
+    }
+
+    /// Explicit request helper for laboratory diagnostics. The caller supplies
+    /// every header and body byte; nothing is generated or guessed.
+    pub async fn fetch_with(
+        &self,
+        target: &str,
+        method: reqwest::Method,
+        headers: Vec<(String, String)>,
+        body: Vec<u8>,
+    ) -> Result<HttpResponse> {
         let url = normalize_url(target)?;
         let host = url.host_str().unwrap_or_default();
         if !self.config.is_host_allowed(host) {
@@ -76,10 +89,17 @@ impl SafeClient {
             )));
         }
 
-        info!(url = url.as_str(), "fetching explicitly supplied URL");
-        let response = self
-            .inner
-            .get(url.clone())
+        info!(
+            url = url.as_str(),
+            method = method.as_str(),
+            "fetching explicitly supplied URL"
+        );
+        let mut request = self.inner.request(method, url.clone());
+        for (name, value) in headers {
+            request = request.header(name, value);
+        }
+        let response = request
+            .body(body)
             .send()
             .await
             .map_err(|err| Error::Http(format!("request to {url} failed: {err}")))?;

@@ -104,6 +104,19 @@ pub enum Command {
         #[arg(long)]
         arch: Option<Architecture>,
     },
+    /// Check harmless configuration preconditions on an explicitly allowed lab target.
+    Preconditions {
+        #[arg(long)]
+        base: String,
+        #[arg(long, default_value = "/app.php")]
+        app_path: String,
+        #[arg(long, default_value = "/ref.php")]
+        ref_path: String,
+        #[arg(long, default_value = "PHPSESSID")]
+        session: String,
+        #[arg(long)]
+        php_version: Option<String>,
+    },
     /// Manage local Docker Compose laboratories (lab mode required).
     Lab {
         #[command(subcommand)]
@@ -123,6 +136,13 @@ pub enum Command {
     Elf {
         #[arg(long, value_name = "FILE")]
         file: PathBuf,
+    },
+    /// Build a markdown offset inventory from JSON offset files.
+    Offsets {
+        #[arg(long, value_name = "DIR", default_value = "profiles/offsets")]
+        dir: PathBuf,
+        #[arg(long, value_name = "FILE")]
+        output: Option<PathBuf>,
     },
     /// Start the interactive terminal interface.
     Tui,
@@ -204,6 +224,21 @@ pub enum CalibrateAction {
         container: String,
         #[arg(long, value_name = "FILE")]
         artifact: Option<PathBuf>,
+    },
+    /// Inspect a PHP source tree or tarball for the upstream fix markers.
+    Source {
+        #[arg(long, value_name = "PATH")]
+        path: PathBuf,
+    },
+    /// Parse a PHP build banner from an explicitly supplied local binary.
+    Binary {
+        #[arg(long, value_name = "FILE")]
+        path: PathBuf,
+    },
+    /// Parse a stage-3 pad specification without executing anything.
+    Pads {
+        #[arg(long)]
+        spec: Option<String>,
     },
     /// Create a calibration record with complete reproducible metadata.
     Record {

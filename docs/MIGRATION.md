@@ -8,7 +8,10 @@
 | `auto.detect_distro/normalize_distro/classify/detect_sapi` | `fingerprint::detect_*`, `core::versions` | unit + compatibility |
 | `auto.load_profiles/select` | `profiles::Registry` | unit + integration (56 JSON) |
 | `auto.parse_probe_response` | `fingerprint::parse_probe_response` | unit |
-| `fpm_versions` | `core::versions` + реестр | unit + compatibility |
+| `fpm_versions` (полностью) | `core::fpm_versions`: `branch_of`, `fixed_in`, `is_vulnerable`, `affected_versions`, `ports_for`, `chain_applies`, `source_is_fixed`, `has_session_cancel_decode`, `build_status` | unit + compatibility |
+| `cmd_probe` шаги 1–4 | `diagnostics::probe` + CLI `preconditions` (только lab-режим, только безопасные GET/POST, без OOM) | integration |
+| `calibrate.parse_pads`, `stage3_profile_json` | `calibration::pad` | unit + integration |
+| `offsets.write_doc` | CLI `offsets inventory` | integration |
 | `inventory` | `php2shell-inventory` (10 колонок + status/file в JSON) | unit + integration |
 | `offsets.parse_elf` | `binary-parser::parse_elf64` | unit + fuzz |
 | `calibrate` метаданные | `php2shell-calibration` | unit |
@@ -26,6 +29,7 @@
 | `probe_config` (16/64/256 MiB POST) | намеренный OOM удалённого сервера | `parse_probe_response` разбирает уже имеющийся ответ |
 | `trigger_pre_rinit_oom`, `_amplifier_*`, `grow_until_armed` | OOM/DoS | нет |
 | `cmd_endgame`, `cmd_no_oracle`, `cmd_primitive`, `cmd_poison`, `_build_*_payload` | подделка структур, выполнение команд | нет |
+| шаг 5 `cmd_probe` (OOM/arm), `grow_until_armed` | намеренный OOM/DoS | в `preconditions` помечается как `skipped` |
 | `Oracle` (`/proc/<pid>/mem`) | чтение памяти процесса | метаданные калибровки без oracle |
 | `cmd_calibrate` (exploit-часть), `matrix`, `fpm_matrix` | автоматическая эксплуатация и сбор доказательств RCE | `calibration record` с полями воспроизводимости и SHA-256 артефакта |
 | `php2shell_upstream`, `bootstrap_upstream` | патчинг нелицензированного эксплойта во время работы | нет; внешний код не загружается |

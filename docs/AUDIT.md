@@ -26,7 +26,7 @@ FPM-лабораторий), внешний `--allow-remote` режим, `/proc/
 | `tools/php2shell_fpm_matrix.py` | Проверка удалённой цепочки на всех незаpatched сборках | `fpm_labs`, `fpm`, `fpm_versions` | **Не переносится** |
 | `tools/php2shell_labs.py` | Apache-лаборатории: `up/down/status/test`, порты 8100–8129, `p2s-lab-*` | Docker, `paths`, `auto` (только `test`) | Переносится lifecycle + конфигурации; `test` — нет |
 | `tools/php2shell_fpm_labs.py` | nginx+FPM-лаборатории без Docker: `up/down/status/smoke/test/ports` | локальные бинарники, шаблоны `.in` | Переносится lifecycle/конфигурация; `test` и `/proc`-debug-ветки — нет |
-| `tools/php2shell_fpm_versions.py` | Реестр уязвимых/исправленных версий, `source_is_fixed` | — | Полностью переносится (чистые данные) |
+| `tools/php2shell_fpm_versions.py` | Реестр уязвимых/исправленных версий, `source_is_fixed` | — | Полностью перенесён в `core::fpm_versions`, включая `ports_for`, `chain_applies`, `has_session_cancel_decode`, `build_status` |
 | `tools/php2shell_inventory.py` | Таблица профилей, 10 колонок, `--json` | JSON-профили | Полностью переносится |
 | `tools/php2shell_offsets.py` | ELF64-парсер символов `libphp.so`, инвентарь оффсетов | Docker (только копирование `.so`) | Полностью переносится парсер; Docker-обвязка — в безопасном виде |
 | `tools/php2shell_vessel.py` | Stage-3 вариант для ранних 8.5 (RCE) | upstream, `rce`, `calibrate` | **Не переносится** |

@@ -218,6 +218,36 @@ async fn local_mock_lab_supports_fingerprinting() {
 }
 
 #[test]
+fn pad_spec_and_offset_inventory_commands_work() {
+    let (code, stdout, stderr) = output(&["calibrate", "pads", "--spec", "4:4x2,31:31x3"]);
+    assert_eq!(code, 0, "stderr={stderr}");
+    let value: serde_json::Value = serde_json::from_str(&stdout).unwrap();
+    assert_eq!(value["stage3_pads"].as_array().unwrap().len(), 5);
+
+    let dir = tempfile::tempdir().unwrap();
+    let out = dir.path().join("offsets.md");
+    let out_arg = out.to_string_lossy().into_owned();
+    let (code, stdout, _) = output(&["offsets", "--dir", "profiles/offsets", "--output", &out_arg]);
+    assert_eq!(code, 0, "{stdout}");
+    let text = std::fs::read_to_string(&out).unwrap();
+    assert!(text.contains("| PHP | arch | zif_system"));
+    assert!(text.contains("8.4.26"));
+}
+
+#[test]
+fn preconditions_requires_lab_mode() {
+    let (code, _, stderr) = output(&[
+        "preconditions",
+        "--base",
+        "http://127.0.0.1:8110",
+        "--php-version",
+        "8.4.26",
+    ]);
+    assert_eq!(code, 4);
+    assert!(stderr.contains("lab mode") || stderr.contains("explicitly configured"));
+}
+
+#[test]
 fn fixtures_are_present() {
     assert!(Path::new(&fixture("http_response.txt")).is_file());
     assert!(Path::new(&fixture("http_response_unknown.txt")).is_file());

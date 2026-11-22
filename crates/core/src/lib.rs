@@ -3,6 +3,7 @@
 //! This crate contains no network or exploit logic.
 
 pub mod error;
+pub mod fpm_versions;
 pub mod sha256;
 pub mod types;
 pub mod versions;

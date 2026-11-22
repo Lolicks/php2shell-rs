@@ -26,6 +26,8 @@ PHP2Shell-RS — это не обёртка над Python и не порт эк�
   лимит размера ответа, ограничение редиректов, whitelist хостов.
 - **ELF64-парсер** — безопасное чтение символов `libphp.so` с проверкой
   границ и fuzz-тестами.
+- **Полный реестр версий FPM** — ветки, порты, `chain_applies`, проверка исходников на маркеры исправления, разбор баннера PHP.
+- **Безопасный precondition probe** — проверка версии, reflection- и reference-эндпоинтов; OOM-шаг намеренно пропускается. Только `mode = "lab"`.
 - **Калибровка метаданных** — воспроизводимые записи с версией PHP, SAPI,
   ОС, архитектурой, сборкой, датой, версией инструмента и SHA-256 артефакта.
   Никаких payload-ов и автоматических «verified» результатов.
@@ -97,6 +99,10 @@ php2shell-rs lab status docker-compose.yml
 php2shell-rs report export --fixture tests/fixtures/http_response.txt \
     --arch amd64 --output reports/diagnostic.json
 php2shell-rs elf symbols --file /path/to/libphp.so
+php2shell-rs offsets --dir profiles/offsets --output docs/offset-inventory-rs.md
+php2shell-rs calibrate pads --spec "4:4x5,31:31x6"
+php2shell-rs calibrate source --path /path/to/php-src
+php2shell-rs preconditions --base http://127.0.0.1:8110 --php-version 8.4.26
 php2shell-rs tui
 ```
 

@@ -11,7 +11,7 @@ max_response_bytes = 2097152
 max_redirects = 3
 pool_max_idle_per_host = 4
 tls_verify = true
-user_agent = "php2shell-rs/1.0.0"
+user_agent = "php2shell-rs/1.1.0"
 
 [profiles]
 directory = "profiles"

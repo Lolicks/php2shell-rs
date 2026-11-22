@@ -3,6 +3,20 @@
 All notable changes to this project are documented here. The format is based
 on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [1.1.0] — 2026-11-22
+
+### Added
+
+- Full port of `php2shell_fpm_versions`: branch matrix, `ports_for`,
+  `chain_applies`, `source_is_fixed`, `has_session_cancel_decode`,
+  `build_status` and full affected-version enumeration.
+- Safe precondition diagnostics (`preconditions`) covering version
+  classification, small reflection and reference checks; the disruptive OOM
+  step remains intentionally unimplemented.
+- Pad-spec and `stage3_profile_json` compatibility helpers.
+- Markdown offset-inventory generation from local JSON offset files.
+- New CLI commands: `preconditions`, `offsets`, `calibrate source|binary|pads`.
+
 ## [1.0.0] — 2026-11-22
 
 ### Added
