@@ -49,7 +49,7 @@ impl Manifest {
             let direct = root.join(&entry.path);
             let from_repo = root.parent().unwrap_or(root).join(&entry.path);
             let file = if direct.is_file() { direct } else { from_repo };
-            match sha256::hash_file(&file) {
+            match sha256::hash_text_file(&file) {
                 Ok(actual) if actual == entry.sha256 => {}
                 Ok(actual) => {
                     problems.insert(

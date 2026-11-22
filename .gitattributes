@@ -1,0 +1,7 @@
+# Keep checkout byte-identical on Windows and Linux. This is required for the
+# SHA-256 profile manifest to verify identically on every platform.
+* text=auto eol=lf
+
+*.webp binary
+*.png binary
+*.ico binary

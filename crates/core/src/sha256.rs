@@ -23,6 +23,25 @@ pub fn hash_bytes(bytes: &[u8]) -> String {
     hex_encode(&hasher.finalize())
 }
 
+/// Hashes a text file with CRLF normalised to LF. The original profiles are
+/// stored with LF in Git, while Windows checkouts may materialise CRLF; this
+/// makes checksums identical on every platform.
+pub fn hash_text_file(path: impl AsRef<Path>) -> Result<String> {
+    let path = path.as_ref();
+    let bytes = std::fs::read(path).map_err(|err| Error::io(path, err))?;
+    let mut normalised = Vec::with_capacity(bytes.len());
+    let mut index = 0;
+    while index < bytes.len() {
+        if bytes[index] == b'\r' && bytes.get(index + 1) == Some(&b'\n') {
+            index += 1;
+            continue;
+        }
+        normalised.push(bytes[index]);
+        index += 1;
+    }
+    Ok(hash_bytes(&normalised))
+}
+
 pub fn hash_file(path: impl AsRef<Path>) -> Result<String> {
     let path = path.as_ref();
     let mut file = std::fs::File::open(path).map_err(|e| Error::io(path, e))?;

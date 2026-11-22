@@ -24,7 +24,7 @@ fn manifest_records_every_original_profile_and_checksum() {
         let file = root().join(&entry.path);
         assert!(file.is_file(), "missing recorded file: {}", entry.path);
         assert_eq!(
-            sha256::hash_file(&file).unwrap(),
+            sha256::hash_text_file(&file).unwrap(),
             entry.sha256,
             "{}",
             entry.path

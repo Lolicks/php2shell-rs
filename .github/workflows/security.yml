@@ -57,8 +57,17 @@ jobs:
           cargo metadata --format-version 1 --locked > metadata.json
           jq -r '.packages[].license // "UNKNOWN"' metadata.json \
             | sort | uniq -c | sort -rn
-          if jq -e '[.packages[].license // ""] | any(test("GPL|AGPL|SSPL"; "i"))' metadata.json > /dev/null; then
-            echo "::error::copyleft license detected in dependency graph"
+          # Flag copyleft-only licenses. Dual-licensed crates (for example
+          # "MIT OR Apache-2.0 OR LGPL-2.1-or-later") let downstream users pick
+          # a permissive option and are therefore acceptable.
+          if jq -e '
+            [.packages[]
+             | {license: (.license // "")}
+             | select(.license | test("GPL|AGPL|SSPL"; "i"))
+             | select(.license | (test("MIT|Apache|ISC|BSD|Unlicense|Zlib|0BSD"; "i") | not))]
+            | length > 0
+          ' metadata.json > /dev/null; then
+            echo "::error::copyleft-only license detected in dependency graph"
             exit 1
           fi
 
